@@ -57,8 +57,15 @@ namespace SendWithUsDemo.Controllers
                 var emailSend = new EmailSend
                 {
                     TemplateData = template,
-                    Recipient = new EmailRecipient(_config.Value.RecipientEmails[0]),
-                    Ccs = new Collection<EmailRecipient> { new EmailRecipient(_config.Value.RecipientEmails[1]) }
+                    Recipients = new Collection<EmailRecipient> 
+                    {
+                        new EmailRecipient(_config.Value.RecipientEmails[0]),
+                        new EmailRecipient(_config.Value.RecipientEmails[1]),
+                    },
+                    Bccs = new Collection<EmailRecipient>
+                    {
+                        new EmailRecipient(_config.Value.RecipientEmails[2])
+                    }
                 };
                 emailSends.Add(emailSend);
             }

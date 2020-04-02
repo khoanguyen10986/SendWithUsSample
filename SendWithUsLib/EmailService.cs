@@ -27,7 +27,8 @@ namespace SendWithUsLib
 
         public async Task<BatchRequestResponse> CreateTemplatesAsync()
         {
-            BatchRequestResponse response = await SendBatchRequestAsync(async () => {
+            BatchRequestResponse response = await SendBatchRequestAsync(async () =>
+            {
 
                 var templateVersion1 = new TemplateVersion
                 {
@@ -49,29 +50,35 @@ namespace SendWithUsLib
             return response;
         }
 
-        public async Task<BatchRequestResponse> SendEmailsAsync(List<EmailSend> emailSend)
+        public async Task<BatchRequestResponse> SendEmailsAsync(List<EmailSend> emailSends)
         {
-            BatchRequestResponse response = await SendBatchRequestAsync(async () => {
+            try
+            {
+                var emailTasks = new List<Task<EmailResponse>>();
 
-                EmailSend firstEmailSend = emailSend.FirstOrDefault();
-                EmailSend secondEmailSend = emailSend.LastOrDefault();
-
-                var firstEmail = new Email(firstEmailSend.TemplateData.TemplateId, firstEmailSend.TemplateData.Data, firstEmailSend.Recipient);
-                foreach (var cc in firstEmailSend.Ccs)
+                foreach (var emailSend in emailSends)
                 {
-                    firstEmail.cc.Add(cc);
-                }
-                await firstEmail.Send();
+                    var tasks = emailSend.Recipients.Select(recipient =>
+                    {
+                        var email = new Email(emailSend.TemplateData.TemplateId, emailSend.TemplateData.Data, recipient);
+                        foreach (var bcc in emailSend.Bccs)
+                        {
+                            email.bcc.Add(bcc);
+                        }
+                        return email.Send();
+                    });
 
-                var secondEmail = new Email(secondEmailSend.TemplateData.TemplateId, secondEmailSend.TemplateData.Data, secondEmailSend.Recipient);
-                foreach (var cc in secondEmailSend.Ccs)
-                {
-                    secondEmail.cc.Add(cc);
+                    emailTasks.AddRange(tasks);
                 }
-                await secondEmail.Send();
-            });
 
-            return response;
+                EmailResponse[] response = await Task.WhenAll(emailTasks);
+
+                return new BatchRequestResponse(true, "200", response.ToJson());
+            }
+            catch (AggregateException ex)
+            {
+                return new BatchRequestResponse(false, "500", null, ex.ToString());
+            }
         }
 
         private async Task<BatchRequestResponse> SendBatchRequestAsync(Func<Task> executeRequests)
@@ -92,6 +99,8 @@ namespace SendWithUsLib
                     if (batchResponse.status_code != 200)
                     {
                         isBatchSuccess = false;
+                        BatchApiRequest.AbortBatchRequest();
+                        break;
                     }
                     var body = batchResponses[i].GetBody<object>();
                     data.Add(body);

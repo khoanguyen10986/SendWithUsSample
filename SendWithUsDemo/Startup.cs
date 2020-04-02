@@ -27,7 +27,7 @@ namespace SendWithUsDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
-            services.Configure<EmailNotificationConfig>(Configuration.GetSection("EmailConfig"));
+            services.Configure<EmailNotificationConfig>(Configuration.GetSection("EmailNotificationConfig"));
             services.AddTransient<IEmailService, EmailService>();
             services.AddControllers();
         }
