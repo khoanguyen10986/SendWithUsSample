@@ -1,0 +1,9 @@
+{
+  "EmailConfig": {
+    "ApiKey": "test_13c4dc3439d8bd64429d778d5ab5a57c3b1176be", //"test_e4710c8433d2ae6ddbb571500bccaca5bc9e97b8",
+    "TimeoutInMilliseconds": 60000,
+    "RetryCount": 3,
+    "RetryIntervalMilliseconds": 200,
+    "MaxBatchRequest": 10
+  }
+}

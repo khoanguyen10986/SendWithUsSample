@@ -1,0 +1,8 @@
+{
+  "EmailSettings": {
+    "ApiKey": "test_484135b56b395060a5a979b01fa4af2583e599ff",
+    "RetryCount": "3",
+    "Timeout": "10000",
+    "RetryInterval": "80"
+  }
+}

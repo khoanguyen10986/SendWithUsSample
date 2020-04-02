@@ -1,0 +1,76 @@
+{
+  "EmailSettings": {
+    "ApiKey": "test_484135b56b395060a5a979b01fa4af2583e599ff",
+    "RetryCount": "5",
+    "Timeout": "30000",
+    "RetryInterval": "100",
+    "OrderMessages": [
+      {
+        "OrderStatus": "OrderSubmitted",
+        "Organisations": [
+          {
+            "OrganisationId": "19c2fba9-7562-4a43-849d-ed1bb2e1c7fd",
+            "TemplateId": "tem_3wT6799CtBJGYFrKvDgJ4CGY"            
+          },
+          {
+            "OrganisationId": "6443b986-57f7-42c6-935e-3343599fe6f6",
+            "TemplateId": "tem_3qp3yQWKm3WXXDTjvTMj9JH9"            
+          }
+        ]
+      },
+      {
+        "OrderStatus": "OrderConfirmedForTransport",
+        "Organisations": [
+          {
+            "OrganisationId": "19c2fba9-7562-4a43-849d-ed1bb2e1c7fd",
+            "TemplateId": "tem_pkwvqmx43DbDS4TBdkdWJKC3"            
+          }
+        ]
+      },
+      {
+        "OrderStatus": "TruckAssigned",
+        "Organisations": [
+          {
+            "OrganisationId": "19c2fba9-7562-4a43-849d-ed1bb2e1c7fd",
+            "TemplateId": "tem_WBGfjJWVPSBqS7qXyfkVtMSG"            
+          }
+        ]
+      },
+      {
+        "OrderStatus": "GoodsPickedUp",
+        "Organisations": [
+          {
+            "OrganisationId": "19c2fba9-7562-4a43-849d-ed1bb2e1c7fd",
+            "TemplateId": "tem_wqwrGSvqQwtxkC443WFxff8F"
+          },
+          {
+            "OrganisationId": "6443b986-57f7-42c6-935e-3343599fe6f6",
+            "TemplateId": "tem_wqwrGSvqQwtxkC443WFxff8F"
+          }
+        ]
+      },
+      {
+        "OrderStatus": "GoodsDroppedOff",
+        "Organisations": [
+          {
+            "OrganisationId": "19c2fba9-7562-4a43-849d-ed1bb2e1c7fd",
+            "TemplateId": "tem_tWgj9b8mwwjW8tPV3Jj6XPMf"
+          },
+          {
+            "OrganisationId": "6443b986-57f7-42c6-935e-3343599fe6f6",
+            "TemplateId": "tem_jkdXT8pYr96M7Pd83CCb6MRR"
+          }
+        ]
+      },
+      {
+        "OrderStatus": "OrderCompleted",
+        "Organisations": [
+          {
+            "OrganisationId": "19c2fba9-7562-4a43-849d-ed1bb2e1c7fd",
+            "TemplateId": "tem_8rfgXqd4HwMdCvRyjxVc9rhc"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "EmailSettings": {
+    "ApiKey": "live_9e30695628a54558938c3cf3d89d0059444bdea0",
+    "RetryCount": "3",
+    "Timeout": "10000",
+    "RetryInterval": "80",
+    "OrderMessages": [
+      {
+        "OrderStatus": "OrderSubmitted",
+        "Organisations": [
+          {
+            "OrganisationId": "b7238c7b-176a-4319-9f11-028d04b6d387",
+            "TemplateId": "tem_3wT6799CtBJGYFrKvDgJ4CGY"
+          },
+          {
+            "OrganisationId": "cb4f825e-057b-40d7-9ad5-ff45bc31c3b3",
+            "TemplateId": "tem_3qp3yQWKm3WXXDTjvTMj9JH9"
+          }
+        ]
+      },
+      {
+        "OrderStatus": "OrderConfirmedForTransport",
+        "Organisations": [
+          {
+            "OrganisationId": "b7238c7b-176a-4319-9f11-028d04b6d387",
+            "TemplateId": "tem_pkwvqmx43DbDS4TBdkdWJKC3"
+          }
+        ]
+      },
+      {
+        "OrderStatus": "TruckAssigned",
+        "Organisations": [
+          {
+            "OrganisationId": "b7238c7b-176a-4319-9f11-028d04b6d387",
+            "TemplateId": "tem_WBGfjJWVPSBqS7qXyfkVtMSG"
+          }
+        ]
+      },
+      {
+        "OrderStatus": "GoodsPickedUp",
+        "Organisations": [
+          {
+            "OrganisationId": "b7238c7b-176a-4319-9f11-028d04b6d387",
+            "TemplateId": "tem_wqwrGSvqQwtxkC443WFxff8F"
+          },
+          {
+            "OrganisationId": "cb4f825e-057b-40d7-9ad5-ff45bc31c3b3",
+            "TemplateId": "tem_wqwrGSvqQwtxkC443WFxff8F"
+          }
+        ]
+      },
+      {
+        "OrderStatus": "GoodsDroppedOff",
+        "Organisations": [
+          {
+            "OrganisationId": "b7238c7b-176a-4319-9f11-028d04b6d387",
+            "TemplateId": "tem_tWgj9b8mwwjW8tPV3Jj6XPMf"
+          },
+          {
+            "OrganisationId": "cb4f825e-057b-40d7-9ad5-ff45bc31c3b3",
+            "TemplateId": "tem_jkdXT8pYr96M7Pd83CCb6MRR"
+          }
+        ]
+      },
+      {
+        "OrderStatus": "OrderCompleted",
+        "Organisations": [
+          {
+            "OrganisationId": "b7238c7b-176a-4319-9f11-028d04b6d387",
+            "TemplateId": "tem_8rfgXqd4HwMdCvRyjxVc9rhc"
+          }
+        ]
+      }
+    ]
+  }
+}

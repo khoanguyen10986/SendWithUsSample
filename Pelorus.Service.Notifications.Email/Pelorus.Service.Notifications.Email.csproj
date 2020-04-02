@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="emailSettings.DEV.json" />
+    <None Remove="emailSettings.json" />
+    <None Remove="emailSettings.PROD.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="emailSettings.PROD.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="emailSettings.DEV.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="emailSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>    
+    <PackageReference Include="Microsoft.AspNetCore.App" />         
+    <PackageReference Include="SendwithusClient" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pelorus.MicroService.AdConnection\Pelorus.MicroService.AdConnection.csproj" />
+    <ProjectReference Include="..\Pelorus.Service.Notifications.Interface\Pelorus.Service.Notifications.Interface.csproj" />
+  </ItemGroup>
+</Project>
